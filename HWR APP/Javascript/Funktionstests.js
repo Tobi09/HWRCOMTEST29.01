@@ -3,13 +3,6 @@ function init() {
 	console.log("init();");
     document.addEventListener("deviceready", function () {
     deviceReady = true;
-	console.log("deviceReady -> in init()");
-	$("#loginPage").on("pageinit",function() {
-	console.log("pageinit run");
-	$("#loginForm").on("submit",handleLogin);
-	checkPreAuth();
-	});
-	$.mobile.changePage("#loginPage");
     }, false);
 
     window.setTimeout(function () {

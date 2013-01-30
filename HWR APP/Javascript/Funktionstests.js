@@ -1,9 +1,3 @@
-    function onDeviceReady() {
-		console.log("test on device ready");
-		alert("on device ready!!!!");
-		navigator.notification.alert("PhoneGap is working");
-    }
-
 var deviceReady = false;
 function init() {
 	console.log("init();");

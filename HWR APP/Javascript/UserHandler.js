@@ -39,7 +39,7 @@ function handleLogin() {
                 window.localStorage.setItem("hwr-com-password", p);    
 				console.log("gehe zur naechsten Seite");
 				$.mobile.changePage("Kontakte.html");
-				navigator.notification.alert("Your login succesed", function() {}, "Error", "OK");
+				navigator.notification.alert("Your login succesed", function() {}, "Login", "OK");
 			} else {
 				window.localStorage.removeItem("hwr-com-password");
 				console.log("keine Daten");
@@ -159,7 +159,7 @@ function changeUser(updatetyp) {
 						console.log("request gesendet");
 						if (data == '(true);') {
 							//alert("Username ge√§ndert!");
-							navigator.notification.alert("Username ge√§ndert!", function() {}, "Error", "OK");
+							navigator.notification.alert("Username ge‰ndert!", function() {}, "Error", "OK");
 						} else {
 							//alert("Fehler beim update");
 							navigator.notification.alert("Fehler beim update", function() {}, "Error", "OK");
@@ -189,17 +189,15 @@ function changeUser(updatetyp) {
 					$.post(url, function (data) {
 						console.log("request gesendet");
 						if (data == '(true);') {
-							window.localStorage.setItem("hwr-com-password", pw2);
+							window.localStorage.setItem("hwr-com-password", pw);
 							//alert("Passwort ge√§ndert!");
-							navigator.notification.alert("Username ge√§ndert!", function() {}, "complete", "OK");
+							navigator.notification.alert("Passwort ge‰ndert!", function() {}, "complete", "OK");
 						} else {
 							//alert("Fehler beim update");
 							navigator.notification.alert("Fehler beim update", function() {}, "complete", "OK");
 						}	
 					});
 					//---
-					//alert("Passwort ge√§ndert!");
-					navigator.notification.alert("Passwort ge‰ndert!", function() {}, "complete", "OK");
 				}	
 			break;
 			case "em":
@@ -215,15 +213,13 @@ function changeUser(updatetyp) {
 						if (data == '(true);') {
 							window.localStorage.setItem("hwr-com-email", newem);
 							//alert("Email ge√§ndert!");
-							navigator.notification.alert("Username ge‰§ndert!", function() {}, "complete", "OK");
+							navigator.notification.alert("Email ge‰ndert!", function() {}, "complete", "OK");
 						} else {
 							//alert("Fehler beim update");
 							navigator.notification.alert("Fehler beim update", function() {}, "Error", "OK");
 						}	
 					});
 					//---
-					//alert("Email ge√§ndert!");
-					navigator.notification.alert("Email ge√§ndert!", function() {}, "complete", "OK");
 				} else {
 					console.log("email leer");
 					//alert("Bitte beim √§ndern auch email angeben!");
@@ -232,9 +228,9 @@ function changeUser(updatetyp) {
 			break;
 		}
 	} else {
-		console.log("√§nderungen nicht m√∂glich da keine email im speicher");
+		console.log("ƒnderungen nicht mˆglich da keine email im speicher");
 		//alert("nicht m√∂glich da keine email");
-		navigator.notification.alert("nicht m√∂glich da keine email", function() {}, "Error", "OK");	
+		navigator.notification.alert("nicht mˆglich da keine email", function() {}, "Error", "OK");	
 	}
 }
 

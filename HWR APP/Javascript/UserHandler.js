@@ -45,14 +45,14 @@ function handleLogin() {
 				console.log("keine Daten");
 				console.log("false login")
 				//alert("Your login failed");
-				//navigator.notification.alert("Your login failed", function() {}, "Error", "OK");
+				navigator.notification.alert("Your login failed", function() {}, "Error", "OK");
 			}
 		});
     } else { 
         //Thanks Igor!
 		console.log("keine angaben");
 		//alert("You must enter a Email and password");
-		//navigator.notification.alert("You must enter a username and password", function() {}, "Error", "OK");
+		navigator.notification.alert("You must enter a username and password", function() {}, "Error", "OK");
     }
 	$("#submitButton").removeAttr("disabled");
     return false;

@@ -1,11 +1,5 @@
 //Login
 //---------------------------------------------------------------------------------------------------
-function init() {
-	console.log("init()");
-	document.addEventListener("deviceready", deviceReady, true);
-	delete init();
-}
-
 function checkPreAuth() {
 	console.log("checkPreAuth");
     var form = $("#loginForm");

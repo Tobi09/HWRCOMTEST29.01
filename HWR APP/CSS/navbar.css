@@ -24,3 +24,11 @@
 }
 
 .ui-content .ui-listview { margin:0px; }
+
+.ui-icon-k_message {
+  background: url(../Images/kontakt_message.png) no-repeat !important;
+}
+
+.ui-icon-k_delete {
+  background: url(../Images/kontakt_delete.png) no-repeat !important;
+}

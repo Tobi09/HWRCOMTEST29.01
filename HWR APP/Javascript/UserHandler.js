@@ -32,6 +32,8 @@ function handleLogin() {
                 window.localStorage.setItem("hwr-com-email", u);
                 window.localStorage.setItem("hwr-com-password", p);    
 				console.log("gehe zur naechsten Seite");
+				//lade Kontaktliste
+				DBsynchronizeKontakte();
 				$.mobile.changePage("Kontakte.html");
 				navigator.notification.alert("Your login succesed", function() {}, "Login", "OK");
 			} else {
@@ -52,12 +54,25 @@ function handleLogin() {
     return false;
 }
 
+//Kontaktliste synchronisieren
+function DBsynchronizeKontakte () {
+	console.log("DBsynchronizeKontakte");
+	saveObjekt('KontaktListe', '');
+	var KontaktListe = loadObjekt('KontaktListe');
+	//Kontakte aus DB laden
+	navigator.notification.alert("Kontaktliste synchronisiert", function() {}, "Error", "OK");
+	//in local Storage packen
+	//local Storage überschreiben
+
+	return 'ergebnis';
+}
+
 //Logoff
 //---------------------------------------------------------------------------------------------------
 function handleLogoff() {
 	console.log("handleLogoff");  
-	window.localStorage.removeItem("hwr-com-email");
-	window.localStorage.removeItem("hwr-com-password");
+	window.localStorage.setItem("hwr-com-email",'');
+	window.localStorage.setItem("hwr-com-password",'');
 	console.log("get Item email: " + window.localStorage.getItem("hwr-com-email"));
 	console.log("gehe zur Login Seite");
 	$.mobile.changePage("index.html");
@@ -240,7 +255,7 @@ $(document).delegate('#deleteAccount', 'click', function() {
       'delete': { //Account lÃ¶schen
         click: function () {
 			console.log("Account lÃ¶schen!");
-			var email = window.localStorage["hwr-com-email"];
+			var email = window.localStorage.getItem("hwr-com-email");
 			if (email!=null) { // löschen
 				var url = "http://garten-kabel-pflasterbau.de/hwr-com/deleteAccount.php?em="+email;
 				console.log(url);  

@@ -4,7 +4,6 @@ function init() {
 	console.log("init();");
     document.addEventListener("deviceready", onDeviceReady(), false);
 	 if (!supportsLocalStorage()) { 
-	
 		navigator.notification.alert("DB Error: " + err, function() {}, "DB Error", "OK");
 		return false; 
 	} else {
@@ -29,31 +28,6 @@ function onDeviceReady() {
 	console.log("onDeviceReady");
     deviceReady = true;
 	}
-	
-function saveObjekt(name, value) {
-	window.localStorage.setItem("name", "value");
-}
-
-function loadObjekt(name) {
-	var value ) window.localStorage.getItem("name");
-	return value;
-}
-
-function deleteObjekt(name) {
-	window.localStorage.removeItem("name");
-}
-
-function saveKontaktList() {
-    var List = $('#List').html();
-    saveObjekt(Kontaktliste, Liste);
-}
-
-function loadKontaktList() {
-    var List = loadObjekt(Kontaktliste);
-    if (List != undefined) {
-        $('List').html(List);
-    }
-}
 
 	
 	//---------------------------------------------------//

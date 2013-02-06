@@ -9,10 +9,6 @@
 
 #settings .ui-icon{ background:  url(../Images/20-gear2.png) 50% 50% no-repeat; background-size: 26px 28px;}
 
-.navbar li a.aktiv {
-	background-color: rgba(255,255,255,.15);
-	color: #fff;	
-}
 
 .navbar {
 	position: fixed;
@@ -20,7 +16,6 @@
 	bottom: 0;
 	right: 0;
 	width:100%;
-	z-index:1;
 }
 
 .ui-content .ui-listview { margin:0px; }
@@ -31,4 +26,12 @@
 
 .ui-icon-k_delete {
   background: url(../Images/kontakt_delete.png) no-repeat !important;
+}
+
+.ui-icon-k_new {
+  background: url(../Images/k_new.png) no-repeat !important;
+}
+
+.content_form {
+	padding-bottom: 60px;
 }

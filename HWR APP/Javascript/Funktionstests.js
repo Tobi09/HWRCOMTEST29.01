@@ -3,12 +3,12 @@ var deviceReady = false;
 function init() {
 	console.log("init();");
     document.addEventListener("deviceready", onDeviceReady(), false);
-	 if (!supportsLocalStorage()) { 
+	/* if (!supportsLocalStorage()) { 
 		navigator.notification.alert("DB Error: " + err, function() {}, "DB Error", "OK");
 		return false; 
 	} else {
 	 
-	 }
+	 }*/
 
     window.setTimeout(function () {
         if (!deviceReady) {
@@ -16,8 +16,7 @@ function init() {
             console.log("Error: Phonegap did not initialize.  Demo will not run correctly.");
         } else {
 			//alert("Phonegap did initialize. Demo will run correctly.");
-            console.log("Phonegap did initialize. Demo not run correctly.");
-
+            console.log("Phonegap did initialize. Demo run correctly.");
 			delete init;
 		}
     }, 1000);
@@ -51,4 +50,15 @@ function onDeviceReady() {
         navigator.notification.vibrate(2000);
     }
 	
+/*
+function iniLadeanimation() {
+	document.getElementbyId("ladeanimation").style.display='block';
+	document.getElementbyId("seiteninhalt").style.display='none';
+}
+
+function endLadeanimation() {
+	document.getElementbyId("ladeanimation").style.display='none';
+	document.getElementbyId("seiteninhalt").style.display='block';
+}
+*/
 	

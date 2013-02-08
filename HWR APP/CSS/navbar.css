@@ -18,6 +18,12 @@
 	width:100%;
 }
 
+#ladeanimation {
+	text-align:center;
+	margin: 0px auto;
+
+}
+
 .ui-content .ui-listview { margin:0px; }
 
 .ui-icon-k_message {

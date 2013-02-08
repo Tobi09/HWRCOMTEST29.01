@@ -38,27 +38,31 @@
     
     <!-- Inhalt ----------------------------->
     <div data-role="content" class="content_form">
-	
-		<ul data-role="listview" data-divider-theme="b" data-inset="true">
-            <li data-role="list-divider" role="heading">
-                Profil
-            </li>
-            <li>
-                <a href="#" id="editUser" onclick="editUser('#editUser', 'un')">Username</a>
-            </li>
-            <li>
-                <a href="#" id="editEmail" onclick="editUser('#editEmail', 'em')">Email</a>
-            </li>
-            <li>
-                <a href="#" id="editPasswort" onclick="editUser('#editPasswort', 'pw')">Password</a>
-            </li>
-        </ul>
+		<div style="display: none" id="ladeanimation">
+			<img src="Images/ladeanimation.gif" alt="Ladeanimation" id="ladeanimation">
+		</div>
+		<div id="seiteninhalt" style="display: block">
+			<ul data-role="listview" data-divider-theme="b" data-inset="true">
+				<li data-role="list-divider" role="heading">
+					Profil
+				</li>
+				<li>
+					<a href="#" id="editUser" onclick="editUser('#editUser', 'un')">Username</a>
+				</li>
+				<li>
+					<a href="#" id="editEmail" onclick="editUser('#editEmail', 'em')">Email</a>
+				</li>
+				<li>
+					<a href="#" id="editPasswort" onclick="editUser('#editPasswort', 'pw')">Password</a>
+				</li>
+			</ul>
 	
 		
-		<hr />
-    	<input name="Abmelden" type="button" onClick="handleLogoff()" value="Abmelden">
-		<hr />
-		<a href="#" id="deleteAccount" data-role="button">delete Account</a>
+			<hr />
+			<input name="Abmelden" type="button" onClick="handleLogoff()" value="Abmelden">
+			<hr />
+			<a href="#" id="deleteAccount" data-role="button">delete Account</a>
+		</div>
     </div>
     
     <!-- Footer ----------------------------->

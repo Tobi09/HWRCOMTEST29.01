@@ -31,7 +31,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
 </head> 
-<body onload="init()"> 
+<body onload="init(), checkPreAuth()"> 
 
 <div data-role="page" id="loginPage" data-theme="a">   
     <!-- Header ----------------------------->
@@ -41,28 +41,27 @@
     
     <!-- Inhalt ----------------------------->
     <div data-role="content">
-	
-	<p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
-    <p><a href="#" onclick="playBeep(); return false;">Play Beep</a></p>
-    <p><a href="#" onclick="vibrate(); return false;">Vibrate</a></p>
-	 
-   	<form id="loginForm">
-        <div data-role="fieldcontain" class="ui-hide-label">
-            <label for="username">Email:</label>
-            <input type="text" name="Email" id="username" value="" placeholder="Email" />
-        </div>
+	<div style="display: none" id="ladeanimation">
+	<img src="Images/ladeanimation.gif" alt="Ladeanimation" id="ladeanimation">
+	</div>
+		<div id="seiteninhalt" style="display: block">
+			<form id="loginForm">
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="username">Email:</label>
+					<input type="text" name="Email" id="username" value="" placeholder="Email" />
+				</div>
 
-        <div data-role="fieldcontain" class="ui-hide-label">
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" value="" placeholder="Passwort" />
-        </div>
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="password">Password:</label>
+					<input type="password" name="password" id="password" value="" placeholder="Passwort" />
+				</div>
 
-        <input type="button" value="Login" id="submitButton" onClick="handleLogin()">
-        </form>
-			<hr />
-            Noch keinen Account? <a href="SignIn.html">Registrieren</a>
-      </form>
-    	
+				<input type="button" value="Login" id="submitButton" onClick="handleLogin()">
+				</form>
+					<hr />
+					Noch keinen Account? <a href="SignIn.html">Registrieren</a>
+			  </form>
+		</div>
     </div>
 
     <!-- Footer ----------------------------->

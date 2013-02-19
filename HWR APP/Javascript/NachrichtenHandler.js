@@ -68,7 +68,6 @@ function recieveMessages () {//Empfängt alle Nachrichten und speichert sie im lo
 }
 
 //$("#incomingMessages").append("<div class='message'><span class='username'>" + name + ":</span> " + message + "</div>";
-//$("#incomingMessages").scrollTop($("#incomingMessages")[0].scrollHeight);
       
 	  
 function sendMessage () {//sendet Nachricht
@@ -114,6 +113,7 @@ function loadChat() {
 	}
 	console.log("name = " + m);
 	$("#header_chatname").text(m);
+	$("#incomingMessages").scrollTop($("#incomingMessages")[0].scrollHeight);
 }
 
 function setChatName() { //lädt chatemail für den Header

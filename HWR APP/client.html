@@ -1,0 +1,44 @@
+
+<html>
+        <head>
+                <title>WebSocket Chat</title>
+        </head>
+<style>
+#chat {
+        height: 400px;
+}
+</style>
+<script>
+var sock;
+function init(){
+        if("WebSocket" in window){
+                sock = new WebSocket("ws://http://garten-kabel-pflasterbau.de/hwr-com/server.php:12345/");
+                sock.onopen = function(msg){ chat("You are connected with state: "+this.readyState); send(); document.getElementById("str").disabled = false; };
+                sock.onmessage = function(msg){ chat(msg.data); };
+                sock.onclose = function(msg){ chat ("Disconnected"); };
+        } else {
+                alert("Your browser does not support WebSockets");
+        }
+}
+function chat(msg){
+        var ele = document.getElementById("chat");
+        ele.innerHTML += msg + "<br />";
+        ele.scrollTop = ele.scrollHeight;
+}
+function send(){
+        var ele = document.getElementById("str");
+        sock.send(ele.value);
+        ele.value = "";
+}
+function enter(e){
+        if(e.keyCode == 13) send();
+}
+</script>
+ 
+<body onload="init()">
+<h1>WebSocket Chat</h1>
+<div id="chat"></div>
+<input type="text" id="str" value="Connecting" onkeydown="enter(event);" disabled="disabled" />
+<button onclick="send()">Send</button>
+</body>
+</html>

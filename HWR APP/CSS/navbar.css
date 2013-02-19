@@ -41,3 +41,17 @@
 .content_form {
 	padding-bottom: 60px;
 }
+
+.username {
+    font-weight: strong;
+    color: #0f0;
+}
+
+.message {
+    padding: 5px 5px 5px 5px;
+}
+
+.msgContainerDiv {
+        overflow-y: scroll;
+        height: 250px;
+}

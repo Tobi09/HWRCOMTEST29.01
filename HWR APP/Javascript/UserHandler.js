@@ -10,9 +10,10 @@ function checkPreAuth() {
     }
 }
 
+
 function handleLogin() {
 	console.log("handleLogin");
-    var form = $("#loginForm");    
+    var form = $("#loginForm");   
     //disable the button so we can't resubmit while we wait
 	$("#submitButton",form).attr("disabled","disabled");
     var u = $("#username", form).val();
@@ -37,7 +38,7 @@ function handleLogin() {
 				DBsynchronizeKontakte();
 				endLadeanimation();
 				$.mobile.changePage("Kontakte.html");
-				navigator.notification.alert("Your login succesed", function() {}, "Login", "OK");
+				//navigator.notification.alert("Your login succesed", function() {}, "Login", "OK");
 			} else {
 				window.localStorage.removeItem("hwr-com-password");
 				console.log("keine Daten");
@@ -77,15 +78,12 @@ function DBsynchronizeKontakte () {
 			for (var i=0;i<resultArr.length;i++) {
 				var createMail = resultArr[i].email;
 				var username = resultArr[i].username;
-				var inhalt = "<li id=\""+createMail+"\"><a href=\"\"><img src=\"Images/kontaktbild.jpg\"><h3>"+username+"</h3><p>"+createMail+"</p></a><a href=\"#\" data-icon=\"k_delete\" class=\"removeKontakt\"></a></li>";
+				var inhalt = "<li id=\""+createMail+"\"><a href=\"chat.html\" onclick='setChat_Email(\""+createMail+"\")'><img src=\"Images/kontaktbild.jpg\"><h3>"+username+"</h3><p>"+createMail+"</p></a><a href=\"#\" data-icon=\"k_delete\" class=\"removeKontakt\"></a></li>";
 				lsList = lsList + inhalt;
 			}
 		}
 		console.log("save kontaktliste");
 		saveObjekt('KontaktListe', lsList);
-		console.log("load kontaktliste");
-		loadKontaktList();
-		$('#KontaktListe').listview('refresh');
 	});
 }
 
@@ -320,6 +318,11 @@ $(document).delegate('#deleteAccount', 'click', function() {
     }
   })
 })
+
+function saveObjekt(name, value) {
+	console.log("saveObjekt value= " + value);
+	window.localStorage.setItem("hwr-com-"+name, value);
+}
 
 
 //Animation

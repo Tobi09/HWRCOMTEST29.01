@@ -1,3 +1,5 @@
+$(document).delegate('#KontaktePage', 'pageshow', loadKontaktList);
+
 function saveObjekt(name, value) {
 	console.log("saveObjekt value= " + value);
 	window.localStorage.setItem("hwr-com-"+name, value);
@@ -32,7 +34,7 @@ function loadKontaktList() {
     } else {
 		console.log("List is undefined");
 	}
-	
+	$('#KontaktListe').listview('refresh')
 }
 
 
@@ -67,7 +69,7 @@ $(document).delegate('#addKontaktdialog', 'click', function() {
 							//navigator.notification.alert("DB - neuer Kontakt", function() {}, "Error", "OK");
 							var form = $("#newKontaktForm"); 
 							var neuerKontakt = document.createElement("li");
-							var inhalt = "<li id=\""+createMail+"\"><a href=\"\"><img src=\"Images/kontaktbild.jpg\"><h3>"+username+"</h3><p>"+createMail+"</p></a><a href=\"#\" data-icon=\"k_delete\" class=\"removeKontakt\"></a></li>";
+							var inhalt = "<li id=\""+createMail+"\"><a href=\"chat.html\" onclick=\"setChat_Email(\""+createMail+"\")\"><img src=\"Images/kontaktbild.jpg\"><h3>"+username+"</h3><p>"+createMail+"</p></a><a href=\"#\" data-icon=\"k_delete\" class=\"removeKontakt\"></a></li>";
 							var lsList = loadObjekt('KontaktListe');
 							if (lsList != '' && lsList != undefined && lsList != null) {
 								lsList = lsList + inhalt;
@@ -78,9 +80,6 @@ $(document).delegate('#addKontaktdialog', 'click', function() {
 								saveObjekt('KontaktListe', lsList);
 								loadKontaktList();
 								$('#KontaktListe').listview('refresh');
-							 
-						
-						
 						} else if (type == 'wrong email'){
 							console.log("wrong email");
 							ergebnis = false;
@@ -104,36 +103,6 @@ $(document).delegate('#addKontaktdialog', 'click', function() {
   )
 })
 
-function DBsynchronizeKontakte () {
-	console.log("DBsynchronizeKontakte");
-	saveObjekt('KontaktListe', '');
-	var KontaktListe = loadObjekt('KontaktListe');
-	var eigenemail = loadObjekt('email');
-	var url = "http://garten-kabel-pflasterbau.de/hwr-com/synchronizeKontakte.php?em="+eigenemail;
-	console.log(url);
-	var username = '';
-	var email ='';
-	iniLadeanimation();		
-	$.post(url, function (data) {
-		console.log("request gesendet");
-		endLadeanimation();			
-		var resultArr = eval(data);
-		var lsList = '';
-		if (resultArr != null) {
-			for (var i=0;i<resultArr.length;i++) {
-				var createMail = resultArr[i].email;
-				var username = resultArr[i].username;
-				var inhalt = "<li id=\""+createMail+"\"><a href=\"\"><img src=\"Images/kontaktbild.jpg\"><h3>"+username+"</h3><p>"+createMail+"</p></a><a href=\"#\" data-icon=\"k_delete\" class=\"removeKontakt\"></a></li>";
-				lsList = lsList + inhalt;
-			}
-		}
-		console.log("save kontaktliste");
-		saveObjekt('KontaktListe', lsList);
-		console.log("load kontaktliste");
-		loadKontaktList();
-		$('#KontaktListe').listview('refresh');
-	});
-}
 
 $('.removeKontakt').live("click", function() {
 	var ergebnis = true;
@@ -164,36 +133,8 @@ $('.removeKontakt').live("click", function() {
 		saveKontaktList();			
 	}
 });
-	
 
-/*		SIEHE UserHandler.js
-function DBsynchronizeKontakte () {
-	console.log("DBsynchronizeKontakte");
-	var eigeneMail = loadObjekt('email');
-	saveObjekt('KontaktListe', '');
-	var KontaktListe = '';
-	var inhalt = '';
-		var url = "http://garten-kabel-pflasterbau.de/hwr-com/synchronizeKontakte.php?em="+eigeneMail;
-				console.log(url);  
-				$.post(url, function (data) {
-					console.log("request gesendet");
-					//anfang
-					//for (var x=0;x<data.length;x++) {
-					console.log(data[x,0]);
-					console.log("");
-					console.log(data[x,1]);
-					console.log("");
-					console.log(data);
-					/*var username = '';
-					var email = '';
-					var neuer_user = "<li id=\"Kontakt"+email+"\"><a href=\"\"><img src=\"Images/kontaktbild.jpg\"><h3>"+username+"</h3><p>"+email+"</p></a><a href=\"#\" data-icon=\"k_delete\" class=\"removeKontakt\" onClick=\"DBdeleteKontakt('"+email+"')\">></a></li>";
-					inhalt = inhalt + neuer_user;
-					//}
-					//ende
-				})
 
-	saveObjekt('KontaktListe', KontaktListe);
-}*/
 
 //Animation
 function iniLadeanimation() {

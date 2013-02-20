@@ -21,7 +21,6 @@
 #ladeanimation {
 	text-align:center;
 	margin: 0px auto;
-
 }
 
 .ui-content .ui-listview { margin:0px; }
@@ -39,7 +38,7 @@
 }
 
 .content_form {
-	padding-bottom: 60px;
+	padding-bottom: 80px;
 }
 
 .username {

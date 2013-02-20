@@ -33,7 +33,7 @@
 	
 <div data-role="page" id="ChatPage" data-theme="a">    
     <!-- Header ----------------------------->
-	<div data-role="header">
+	<div data-role="header" data-position="fixed">
     	<h1>Chat</h1>
 		<h3 id="header_chatname"></h3>
     </div>
@@ -46,13 +46,12 @@
         <textarea name="messageText" id="messageText"></textarea>
 
 		<input type="button" value="Senden" id="chatsendeButton" onClick="sendMessage()">
-		<input type="button" value="Recieve" id="chatempfangButton" onClick="recieveMessages()">
 		</form>
     </div>
 
     <!-- Footer ----------------------------->
     <!-- NAVBAR ----------------------------->
-    <div data-role="footer" class="navbar" data-theme="b">
+    <div data-role="footer" class="navbar" data-theme="b" data-position="fixed">
    		<div data-role="navbar" class="navbar" data-iconpos="top" id="nav">
             <ul>
                 <li><a href="Kontakte.html" id="kontakte" data-icon="custom">Kontakte</a></li>

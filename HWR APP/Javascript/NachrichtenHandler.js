@@ -28,7 +28,7 @@ function getChat_Email() {
 //auto reciever
 function checkMessages() {
 	recieveMessages();
-	setTimeout("checkMessages()", 15000); 
+	setTimeout("checkMessages()", 5000); 
 }
 //Nachrichten synchronisieren
 function recieveMessages () {//Empfängt alle Nachrichten und speichert sie im local Storage
@@ -62,6 +62,15 @@ function recieveMessages () {//Empfängt alle Nachrichten und speichert sie im lo
 				console.log(saveChat);
 				saveObjekt("-chat-"+chat_email, saveChat);
 				loadChat();
+				$("#incomingMessages").scrollTop($("#incomingMessages")[0].scrollHeight);
+				
+				//Nutzer Benachrichtigunen
+				navigator.notification.vibrate(250);
+				navigator.notification.beep(1);
+				navigator.notification.vibrate(500);
+				navigator.notification.vibrate(251);
+				
+				
 			}
 		}
 	});
@@ -102,6 +111,7 @@ function sendMessage () {//sendet Nachricht
 	} else {
 		console.log("keine eingaben");
 	}
+	$("#incomingMessages").scrollTop($("#incomingMessages")[0].scrollHeight);
 }
 
 function loadChat() {

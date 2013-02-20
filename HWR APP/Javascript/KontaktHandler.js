@@ -69,7 +69,7 @@ $(document).delegate('#addKontaktdialog', 'click', function() {
 							//navigator.notification.alert("DB - neuer Kontakt", function() {}, "Error", "OK");
 							var form = $("#newKontaktForm"); 
 							var neuerKontakt = document.createElement("li");
-							var inhalt = "<li id=\""+createMail+"\"><a href=\"chat.html\" onclick=\"setChat_Email(\""+createMail+"\")\"><img src=\"Images/kontaktbild.jpg\"><h3>"+username+"</h3><p>"+createMail+"</p></a><a href=\"#\" data-icon=\"k_delete\" class=\"removeKontakt\"></a></li>";
+							var inhalt = "<li id=\""+createMail+"\"><a href=\"chat.html\" onclick='setChat_Email(\""+createMail+"\")'><img src=\"Images/kontaktbild.jpg\"><h3>"+username+"</h3><p>"+createMail+"</p></a><a href=\"#\" data-icon=\"k_delete\" class=\"removeKontakt\"></a></li>";
 							var lsList = loadObjekt('KontaktListe');
 							if (lsList != '' && lsList != undefined && lsList != null) {
 								lsList = lsList + inhalt;

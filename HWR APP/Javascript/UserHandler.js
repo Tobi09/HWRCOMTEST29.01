@@ -1,4 +1,4 @@
-//Login
+ï»¿//Login
 //---------------------------------------------------------------------------------------------------
 function checkPreAuth() {
 	////console.log("checkPreAuth");
@@ -137,7 +137,7 @@ function handleRegister() {
 		} else {
 			//console.log("passwöerter nicht identisch");
 			//alert("Passwörter nicht identisch");
-			navigator.notification.alert("Passwörter nicht identisch", function() {}, "Error", "OK");
+			navigator.notification.alert("PasswÃ¶rter nicht identisch", function() {}, "Error", "OK");
 		}
     } else { 
         //Thanks Igor!
@@ -190,7 +190,7 @@ function changeUser(updatetyp) {
 						//console.log("request gesendet");
 						if (data == '(true);') {
 							//alert("Username geÃ¤ndert!");
-							navigator.notification.alert("Username geändert!", function() {}, "Error", "OK");
+							navigator.notification.alert("Username geÃ¤ndert!", function() {}, "Error", "OK");
 						} else {
 							//alert("Fehler beim update");
 							navigator.notification.alert("Fehler beim update", function() {}, "Error", "OK");
@@ -222,7 +222,7 @@ function changeUser(updatetyp) {
 						if (data == '(true);') {
 							window.localStorage.setItem("hwr-com-password", pw);
 							//alert("Passwort geÃ¤ndert!");
-							navigator.notification.alert("Passwort geändert!", function() {}, "complete", "OK");
+							navigator.notification.alert("Passwort geÃ¤ndert!", function() {}, "complete", "OK");
 						} else {
 							//alert("Fehler beim update");
 							navigator.notification.alert("Fehler beim update", function() {}, "complete", "OK");
@@ -246,7 +246,7 @@ function changeUser(updatetyp) {
 						if (data == '(true);') {
 							window.localStorage.setItem("hwr-com-email", newem);
 							//alert("Email geÃ¤ndert!");
-							navigator.notification.alert("Email geändert!", function() {}, "complete", "OK");
+							navigator.notification.alert("Email geÃ¤ndert!", function() {}, "complete", "OK");
 						} else {
 							//alert("Fehler beim update");
 							navigator.notification.alert("Fehler beim update", function() {}, "Error", "OK");
@@ -256,14 +256,14 @@ function changeUser(updatetyp) {
 				} else {
 					//console.log("email leer");
 					//alert("Bitte beim Ã¤ndern auch email angeben!");
-					navigator.notification.alert("Bitte beim Ändern auch Email angeben!", function() {}, "Error", "OK");	
+					navigator.notification.alert("Bitte beim Ã¤ndern auch Email angeben!", function() {}, "Error", "OK");	
 				}
 			break;
 		}
 	} else {
 		//console.log("Änderungen nicht möglich da keine email im speicher");
 		//alert("nicht mÃ¶glich da keine email");
-		navigator.notification.alert("nicht möglich da keine email", function() {}, "Error", "OK");	
+		navigator.notification.alert("nicht mÃ¶glich da keine email", function() {}, "Error", "OK");	
 	}
 }
 

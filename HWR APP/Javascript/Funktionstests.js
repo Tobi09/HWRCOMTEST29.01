@@ -1,7 +1,7 @@
 var deviceReady = false;
 
 function init() {
-	console.log("init();");
+	//console.log("init();");
     document.addEventListener("deviceready", onDeviceReady(), false);
 	/* if (!supportsLocalStorage()) { 
 		navigator.notification.alert("DB Error: " + err, function() {}, "DB Error", "OK");
@@ -13,10 +13,10 @@ function init() {
     window.setTimeout(function () {
         if (!deviceReady) {
             //alert("Error: Phonegap did not initialize.  Demo will not run correctly.");
-            console.log("Error: Phonegap did not initialize.  Demo will not run correctly.");
+            //console.log("Error: Phonegap did not initialize.  Demo will not run correctly.");
         } else {
 			//alert("Phonegap did initialize. Demo will run correctly.");
-            console.log("Phonegap did initialize. Demo run correctly.");
+            //console.log("Phonegap did initialize. Demo run correctly.");
 			delete init;
 		}
     }, 1000);
@@ -24,7 +24,7 @@ function init() {
 } 
 
 function onDeviceReady() {
-	console.log("onDeviceReady");
+	//console.log("onDeviceReady");
     deviceReady = true;
 	}
 

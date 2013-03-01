@@ -190,7 +190,7 @@ function changeUser(updatetyp) {
 						//console.log("request gesendet");
 						if (data == '(true);') {
 							//alert("Username geändert!");
-							navigator.notification.alert("Username geändert!", function() {}, "Error", "OK");
+							navigator.notification.alert("Username geändert!", function() {}, "Succes", "OK");
 						} else {
 							//alert("Fehler beim update");
 							navigator.notification.alert("Fehler beim update", function() {}, "Error", "OK");
@@ -222,10 +222,10 @@ function changeUser(updatetyp) {
 						if (data == '(true);') {
 							window.localStorage.setItem("hwr-com-password", pw);
 							//alert("Passwort geändert!");
-							navigator.notification.alert("Passwort geändert!", function() {}, "complete", "OK");
+							navigator.notification.alert("Passwort geändert!", function() {}, "Succes", "OK");
 						} else {
 							//alert("Fehler beim update");
-							navigator.notification.alert("Fehler beim update", function() {}, "complete", "OK");
+							navigator.notification.alert("Fehler beim update", function() {}, "Error", "OK");
 						}	
 					});
 					//---
@@ -246,7 +246,7 @@ function changeUser(updatetyp) {
 						if (data == '(true);') {
 							window.localStorage.setItem("hwr-com-email", newem);
 							//alert("Email geändert!");
-							navigator.notification.alert("Email geändert!", function() {}, "complete", "OK");
+							navigator.notification.alert("Email geändert!", function() {}, "Succes", "OK");
 						} else {
 							//alert("Fehler beim update");
 							navigator.notification.alert("Fehler beim update", function() {}, "Error", "OK");
